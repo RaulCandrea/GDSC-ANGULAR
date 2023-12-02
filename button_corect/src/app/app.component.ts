@@ -12,7 +12,5 @@ import {CounterComponent} from "./counter/counter.component";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public afisare(counter: number): void{
-    console.log("Afisare counter: ",counter);
-  }
+
 }

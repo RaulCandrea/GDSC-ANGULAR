@@ -1,31 +1,18 @@
-import { Component , Input, Output,EventEmitter} from '@angular/core';
+import { Component , Input, Output , EventEmitter} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {ButtonComponent} from "../button/button.component";
 
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css'
 })
 export class CounterComponent {
-  count: number = 0;
-  @Output() schimbareCount= new EventEmitter<number>();
-
-  public increment() : void{
-    this.count++;
-    this.schimbareCount.emit(this.count);
+count:number = 0;
+  public afisare(counter: number): void{
+    this.count=counter;
   }
-
-  public decrement() : void{
-    this.count--;
-    this.schimbareCount.emit(this.count);
-  }
-
-  public reset() : void{
-    this.count = 0;
-    this.schimbareCount.emit(this.count);
-  }
-
 }
